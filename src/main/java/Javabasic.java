@@ -20,9 +20,11 @@ public class Javabasic {
         //特殊的操作
         driver.findElement(BaiduSearchPO.BaiduSearchInput).sendKeys("学习");
         //driver.findElement(BaiduSearchPO.BaiduSearchButton).click();
-        bspo.Googlesearch("selenium page object");
+        bspo.BaiduSearch("selenium page object");
 
         KeQQPO kqpo = new KeQQPO(driver);
         kqpo.keSearch("java");
+        GooglePO ggpo = new GooglePO(driver);
+        ggpo.Googlesearch("selenium learning");
     }
 }
