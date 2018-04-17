@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Javabasic {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 //        int i;
 //        i = 10;
 //        System.out.println("PageObject" + i);

@@ -11,8 +11,9 @@ public class GooglePO extends BasicPO{
         driver.get(url);
     }
     //定义一个方法，把搜索和按钮都封装起来
-    public  void Googlesearch(String keywords){
+    public  void Googlesearch(String keywords) throws InterruptedException {
         driver.findElement(GoogleSearchInput).sendKeys(keywords);
+        Thread.sleep(2000);
         driver.findElement(GoogleSearchButton).click();
     }
 }
