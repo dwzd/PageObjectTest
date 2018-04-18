@@ -14,7 +14,9 @@ public class BaiduSearchPO extends BasicPO{
    }
    //定义一个方法，把搜索和按钮都封装起来
     public  void BaiduSearch(String keywords){
-        driver.findElement(BaiduSearchInput).sendKeys(keywords);
-        driver.findElement(BaiduSearchButton).click();
+        this.findelement(BaiduSearchInput, 10).sendKeys(keywords); //是BasicPO 类中封装的自定义的findelement 方法
+       // driver.findElement(BaiduSearchInput).sendKeys(keywords); //使用的是selenium 自带的findElement 方法
+        this.findelement(BaiduSearchButton, 10).click();
+        //driver.findElement(BaiduSearchButton).click();
     }
 }
