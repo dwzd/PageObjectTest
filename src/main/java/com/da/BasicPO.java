@@ -1,3 +1,5 @@
+package com.da;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -6,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class BasicPO {
@@ -22,8 +26,12 @@ public class BasicPO {
             return element;
         }
         catch (Exception e){
+            //long filename = System.currentTimeMillis();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HHmmss");
+            String time = sdf.format(new Date());
+            Common.shotscreen(driver, time);
             //System.out.println(by.toString()+"This object could not be found!");
-            logger.error( this.getClass().getName() + by.toString() + " This object could not be found!!!");
+            logger.error( " | "+this.getClass().getName() + by.toString() + " This object could not be found!!!"+ " | Screenshot file is: "+ time);
             return null;
         }
     }
@@ -35,7 +43,12 @@ public class BasicPO {
             logger.info(this.getClass().getName() + by.toString() + " This object was accessed!!");
             return element;
         }catch (Exception e){
-            logger.error(this.getClass().getName() + by.toString() + " The object could not be found!!");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HHmmss");
+            String time = sdf.format(new Date());
+            Common.shotscreen(driver, time);
+            //System.out.println(by.toString()+"This object could not be found!");
+
+            logger.error(this.getClass().getName() + by.toString() + " The object could not be found!!"+ "Screenshot: "+ time);
             return null;
         }
     }

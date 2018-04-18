@@ -1,4 +1,5 @@
-import org.openqa.selenium.By;
+package com.da;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -19,7 +20,7 @@ public class Javabasic {
 //        driver.findElement(By.id("su")).click();
         //特殊的操作
         driver.findElement(BaiduSearchPO.BaiduSearchInput).sendKeys("学习");
-        //driver.findElement(BaiduSearchPO.BaiduSearchButton).click();
+        //driver.findElement(com.da.BaiduSearchPO.BaiduSearchButton).click();
         bspo.BaiduSearch("selenium page object");
 
         KeQQPO kqpo = new KeQQPO(driver);

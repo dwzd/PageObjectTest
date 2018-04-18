@@ -1,3 +1,5 @@
+package com.da;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -11,11 +13,16 @@ public class GooglePO extends BasicPO{
         driver.get(url);
     }
     //定义一个方法，把搜索和按钮都封装起来
-    public  void Googlesearch(String keywords){
+    public void Googlesearch(String keywords){
 //        driver.findElement(GoogleSearchInput).sendKeys(keywords);
 //        Thread.sleep(2000);
 //        driver.findElement(GoogleSearchButton).click();
         this.findelement(GoogleSearchInput, 10).sendKeys(keywords);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         this.findelement(GoogleSearchButton,10).click();
     }
 }
