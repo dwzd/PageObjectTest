@@ -38,6 +38,5 @@ public class BasicPO {
             logger.error(this.getClass().getName() + by.toString() + " The object could not be found!!");
             return null;
         }
-
     }
 }
